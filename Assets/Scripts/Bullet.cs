@@ -39,9 +39,6 @@ public class Bullet : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "Border":
-                break;
-
             case "Enemy":
                 Instantiate(damageIndicator, transform.position, Quaternion.identity);
                 other.GetComponent<Enemy>().TakeDamage(1);

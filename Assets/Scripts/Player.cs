@@ -116,35 +116,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Border"))
-        {
-            switch (other.name)
-            {
-                case "BorderLeft":
-                    transform.position = new Vector2(maxPosition.x, transform.position.y);
-                    break;
-
-                case "BorderRight":
-                    transform.position = new Vector2(minPosition.x, transform.position.y);
-                    break;
-
-                case "BorderTop":
-                    transform.position = new Vector2(transform.position.x, minPosition.y);
-                    break;
-
-                case "BorderBottom":
-                    transform.position = new Vector2(transform.position.x, maxPosition.y);
-                    break;
-
-                default:
-                    break;
-            }
-
-            Destroy(trail);
-            trail = Instantiate(trailPrefab, transform.position, Quaternion.identity).GetComponent<Trail>();
-            trail.target = transform;
-        }
-        else if (other.CompareTag("AmmoCollectable"))
+        if (other.CompareTag("AmmoCollectable"))
         {
             ammo += 5;
             if (ammo > MaxAmmo) ammo = MaxAmmo;

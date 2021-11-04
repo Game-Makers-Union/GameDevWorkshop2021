@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Border
   - Enemy
   - AmmoCollectable
   - HealthCollectable
